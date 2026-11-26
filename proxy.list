@@ -1,11 +1,22 @@
-# Domains routed through VPN
-# OpenAI / ChatGPT
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,chatgpt.com
-# Anthropic Claude
-DOMAIN-SUFFIX,claude.ai
-# YouTube basic domains
-DOMAIN-SUFFIX,youtube.com
-DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,googlevideo.com
-DOMAIN-SUFFIX,ytimg.com
+# Imported from soin-mini-2.conf on 2026-11-26
+# Policy applied in Shadowrocket configuration: PROXY
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,vdsina.com
+DOMAIN-SUFFIX,senko.digita
+DOMAIN-SUFFIX,echo-books.com
+DOMAIN-SUFFIX,re-russia.net
+DOMAIN-SUFFIX,2ip.io
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,wallpapers.olaasoft.com
+DOMAIN-SUFFIX,unsplash.com
+DOMAIN-SUFFIX,tripsy.app
+DOMAIN-SUFFIX,tripsy
+DOMAIN-KEYWORD,googleapis.com
+DOMAIN-KEYWORD,gemini.google.com
+DOMAIN-KEYWORD,claude
+DOMAIN-KEYWORD,chatgpt
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,facebook
+DOMAIN-KEYWORD,instagram
+DOMAIN-KEYWORD,flibusta.is
+DOMAIN-KEYWORD,rutracker.org
