@@ -1,41 +1,41 @@
 # Shadowrocket rules
 
-Personal domain rule lists for Shadowrocket. The repository does **not** contain VPN credentials or server settings.
+Личные списки правил Shadowrocket, перенесённые из `soin-mini-2.conf` 26.11.2026.
 
-## Files
+## Файлы
 
-- [proxy.list](proxy.list): route these domains through a proxy.
-- [direct.list](direct.list): route these domains directly.
-- [block.list](block.list): reject these domains.
+- [proxy.list](proxy.list) — 20 пользовательских правил, политика `PROXY`.
+- [direct.list](direct.list) — 11 пользовательских правил, политика `DIRECT`.
+- [block.list](block.list) — пустой список блокировок (только комментарии).
 
-Only `proxy.list` contains starter entries (ChatGPT/OpenAI, Claude and basic YouTube domains). The other lists are templates and do not change routing until you add domains.
+Внешние списки YouTube и Telegram от blackmatrix7 не дублируются: подключаются отдельно из основной конфигурации. Существующие настройки DNS в секциях `[General]` и `[Host]` тоже остаются в конфигурации.
 
-## Use in Shadowrocket
+## Подключение
 
-In your existing Shadowrocket configuration, add these entries to the **existing** `[Rule]` section (do not create a second `[Rule]` header):
+Добавь в существующий раздел `[Rule]` текущего конфигурационного файла Shadowrocket (выше `FINAL,DIRECT`):
 
 ```ini
 RULE-SET,https://raw.githubusercontent.com/soin365/shadowrocket-rules/main/block.list,REJECT
 RULE-SET,https://raw.githubusercontent.com/soin365/shadowrocket-rules/main/direct.list,DIRECT
 RULE-SET,https://raw.githubusercontent.com/soin365/shadowrocket-rules/main/proxy.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,PROXY
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list,PROXY
+FINAL,DIRECT
 ```
 
-Insert them **above** your existing `FINAL` (or `MATCH`) rule, leaving that fallback unchanged. Rules are considered in order: earlier matching entries take precedence.
+`DIRECT` намеренно стоит выше `PROXY`, чтобы явные исключения обрабатывались первыми. Это небольшое изменение приоритета по сравнению с исходным файлом при пересечении правил; политики самих правил не менялись. Если требуется буквальное сохранение порядка каждого правила исходника, используйте исходную конфигурацию.
 
-`PROXY` must be a valid policy in your current configuration; otherwise replace it with the actual proxy group/policy name. These files contain **matching rules only**, not proxies.
+Сохраняй существующие `[General]`, `[Host]` и остальные секции без изменений. `PROXY` должно соответствовать названию политики клиента.
 
-## Edit the lists
+## Редактирование
 
-One rule per line, for example:
+В каждом `.list` одна запись в строке:
 
 ```text
 DOMAIN-SUFFIX,example.com
-DOMAIN,api.example.com
+DOMAIN-KEYWORD,example
 ```
 
-A line beginning with `#` is a comment. Edit files on GitHub and refresh the associated remote rules in Shadowrocket to apply changes. Be aware that remotely fetched lists may be cached.
+Не добавляй `,PROXY` или `,DIRECT` внутрь списка — политика задана строкой `RULE-SET` в основной конфигурации.
 
-## Notes
-
-- Do not publish UUIDs, keys, subscription URLs or other secrets in this public repository.
-- The starter YouTube list is not guaranteed to cover every host used by YouTube.
+После изменения списков обнови удалённые ресурсы в Shadowrocket. Не публикуй в репозитории пароли, UUID, приватные ключи или ссылки на приватные подписки.
