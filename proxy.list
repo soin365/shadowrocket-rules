@@ -1,0 +1,11 @@
+# Domains routed through VPN
+# OpenAI / ChatGPT
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+# Anthropic Claude
+DOMAIN-SUFFIX,claude.ai
+# YouTube basic domains
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,youtu.be
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,ytimg.com
