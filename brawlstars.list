@@ -1,0 +1,8 @@
+# Brawl Stars / Supercell
+# Sources: https://supercell.com/en/our-domains/
+# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Supercell/Supercell.list
+# Domain rules only; gameplay may use direct IP connections not covered here.
+DOMAIN-SUFFIX,brawlstars.com
+DOMAIN-SUFFIX,brawlstarsgame.com
+DOMAIN-SUFFIX,supercell.com
+DOMAIN-SUFFIX,supercellid.com
