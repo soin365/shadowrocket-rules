@@ -1,2 +1,13 @@
-# Direct connection exceptions
-# Example: DOMAIN-SUFFIX,example.org
+# Imported from soin-mini-2.conf on 2026-11-26
+# Policy applied in Shadowrocket configuration: DIRECT
+DOMAIN-SUFFIX,fairpoliticsunder.com
+DOMAIN-SUFFIX,endocs.ru
+DOMAIN-SUFFIX,avito.net
+DOMAIN-SUFFIX,avito.com
+DOMAIN-SUFFIX,avitocdn.net
+DOMAIN-SUFFIX,avitocdn.ru
+DOMAIN-SUFFIX,avito.st
+DOMAIN-SUFFIX,vk-analytics.ru
+DOMAIN-SUFFIX,lenta.news
+DOMAIN-SUFFIX,avito.ru
+DOMAIN-SUFFIX,chat.endocs.ru
