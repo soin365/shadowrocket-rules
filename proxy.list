@@ -1,7 +1,5 @@
 # Imported from soin-mini-2.conf on 2026-11-26
 # Policy applied in Shadowrocket configuration: PROXY
-
-RULE-SET,https://raw.githubusercontent.com/soin365/shadowrocket-rules/main/brawlstars.list
 DOMAIN-SUFFIX,pypi.org
 DOMAIN-SUFFIX,bakai.kg
 DOMAIN-SUFFIX,vdsina.com
